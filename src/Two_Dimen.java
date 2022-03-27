@@ -1,30 +1,24 @@
 public class Two_Dimen {
     public static void main(String[] args) {
-        int total = 0;
-        int[][] matrix = {
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 2, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 3, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 4, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 5, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 6, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0, 7, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0, 0, 8, 0},
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 9},
-        };
+        int n = 10, total = 0;
+        int[][] matrix = new int[n][n];
 
         int[] numbers = new int[10];
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
-                if (matrix[i][j] != 0) {
-                    numbers[i] = matrix[i][j];
-                    total += numbers[i];
+                if (i == j) {
+                    matrix[i][j] = i;
+                    total += matrix[i][j];
+                }else{
+                    matrix[i][j] = 0;
                 }
+                System.out.println(matrix[i][j] + " ");
             }
+            System.out.println();
         }
 
+        System.out.println();
         System.out.println("The sum of the diagonals is: " + total);
 
     }
